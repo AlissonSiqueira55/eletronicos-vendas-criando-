@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Loja de Eletrônicos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+	<style>
+		body {
+			background-color: #b0d8dd;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			background-color: rgb(78, 201, 29);
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.card {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			margin: 20px;
+			max-width: 300px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.card img {
+			max-width: 200px;
+		}
+
+		.card h2 {
+			font-size: 24px;
+			margin: 20px 0;
+		}
+
+		.card p {
+			font-size: 18px;
+			margin: 10px 0;
+		}
+
+		.card button {
+			background-color: #1E90FF;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 18px;
+			padding: 10px 20px;
+			transition: background-color 0.3s;
+		}
+
+		.card button:hover {
+			background-color: #0066CC;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			// seleciona todos os botões de adicionar ao carrinho
+			var buttons = document.querySelectorAll('.card button');
+			var cart = document.getElementById('cart');
+
+			// adiciona um evento de clique em cada botão
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener('click', function() {
+					// adiciona o produto ao carrinho
+					var productName = this.parentNode.querySelector('h2').innerText;
+					cart.innerHTML += '<li>' + productName + '</li>';
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+    
+	<header>
+		<h1>ELETRONICOS ELETRON</h1>
+		<p>Transforme sua vida com os produtos eletrônicos mais inovadores do mercado !</p>
+        <a href="produto.html">produtos</a>
+	</header>
+
+	<div class="container">
+		<div class="card">
+			<img src="img/relogio.jpg" alt="Produto 1">
+			<h2>smartwatchs</h2>
+            <p>A partir de </p>
+			<p>R$ 89,90</p>
+			<button>Adicionar ao Carrinho</button>
+		</div>
+
+		<div class="card">
+			<img src="img/drone.jpg" alt="Produto 2">
+			<h2>Drones com camera</h2>
+            <p>A partir de </p>
+			<p>R$ 259,90 </p>
+			<button>Adicionar ao Carrinho</button>
+		</div>
+
+		
+            <div class="card">
+		<img src="img/celulares.jpg" alt="Produto 4">
+		<h2>smartphones</h2>
+        <p>A partir de </p>
+        <p>R$ 1.200,00</p>
+		<button>Adicionar ao Carrinho</button>
+		
+	</div>
+    
+
+	<div class="card">
+		<img src="img/oculos realidade aumentada.jpg">
+		<h2>Oculos 3d e 4d</h2>
+        <p>A partir de </p>
+		<p>R$ 599,90 </p>
+		<button>Adicionar ao Carrinho</button>
+	</div>
+
+	<div class="card">
+		<img src="img/notbooks.jpg">
+		<h2>notebook</h2>
+        <p>A partir de </p>
+		<p>R$ 999,90 </p>
+		<button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="card">
+		<img src="img/beleza.jpg">
+		<h2> produtos debeleza e cuidados</h2>
+        <p>A partir de </p>
+		<p>R$ 59,90</p>
+		<button>Adicionar ao Carrinho</button>
+    </div>
+
+
+
+<div class="cart-container">
+	<h2></h2>
+	<ul id="cart"></ul>
+</div>
+</body>
+</html>
